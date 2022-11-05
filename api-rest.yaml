@@ -1,0 +1,20 @@
+# Marco Antonio Orozco Morua
+# YAML
+# Docker HUB
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-rest
+  labels:
+    app: web
+spec:
+  containers:
+    - name: mysql   
+      image: maormor/reticulas-mysql:v1
+      ports:
+        - containerPort: 3306
+    - name: api-rest   
+      image: maormor/reticulas-rest:v1
+      ports:
+        - containerPort: 80
